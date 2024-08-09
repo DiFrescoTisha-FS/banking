@@ -103,20 +103,20 @@ const AuthForm = ({ type }: { type: string }) => {
                   ? 'Sign In'
                   : 'Sign Up'
               }
-              <p className="text-16 font-normal text-gray-600">
-                {user 
-                  ? 'Link your account to get started'
-                  : 'Please enter your details'
-                }
-              </p>  
             </h1>
+            <p className="text-16 font-normal text-gray-600">
+              {user 
+                ? 'Link your account to get started'
+                : 'Please enter your details'
+              }
+            </p>  
           </div>
       </header>
       {user ? (
         <div className="flex flex-col gap-4">
-          {/* <PlaidLink user={user} variant="primary" /> */}
+          <PlaidLink user={user} variant="primary" />
         </div>
-      ): (
+      ) : (
         <>
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
@@ -173,4 +173,4 @@ const AuthForm = ({ type }: { type: string }) => {
   )
 }
 
-export default AuthForm
+export default AuthForm;
